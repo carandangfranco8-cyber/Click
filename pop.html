@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #messageBox {
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 15px;
+            min-width: 80%;
+            max-width: 500px;
+            text-align: center;
+            font-size: 1.3em;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="messageBox">Tap the button to see your message!</div>
+    <button onclick="showMessage()">Tap Me!</button>
+
+    <script>
+        const messages = [
+            "Hello, Love!",
+            "I miss you so much!",
+            "I want to hug you tight rn",
+            "I love you!!",
+            "See ya later!!!"
+        ];
+
+        let currentIndex = 0;
+
+        function showMessage() {
+            const box = document.getElementById("messageBox");
+            box.textContent = messages[currentIndex];
+            currentIndex = (currentIndex + 1) % messages.length;
+        }
+    </script>
+
+</body>
+</html>
